@@ -1,0 +1,36 @@
+15 20
+imgs/backdrop.jpg
+
+Objects
+b imgs/cannonball.png 0.0 0.15
+t imgs/tower.png 0.0 0.3
+w imgs/brick.png 0.0 0.47
+
+Characters
+z imgs/zombie.png 0.1
+k imgs/chicken.png  0.15
+d imgs/dragon.png 0.075
+
+
+World
+boooozoodooooob
+ooooooooooooooo
+ooooooooooooooo
+ooooooooooooooo
+ooooooooooooooo
+oootooooooooooo
+ooooooooooooooo
+ooooooooooooooo
+owwwwwwoooooooo
+oooooowoooooooo
+okoooowoooooooo
+oooooowoowwwooo
+oooooowoootoooo
+ooooooooooooooo
+ooooooooooooooo
+otooooooooooooo
+ooooooooooooooo
+ooooooooooooooo
+ooooooooooooooo
+booooooooooooob
+
