@@ -1,4 +1,4 @@
-# Install script for directory: /Users/jmlien/Dropbox/Teaching/CS425/SDL/PA01-Level-Loading/mathtool
+# Install script for directory: /Users/minhvu/Documents/GitHub/sdl-level-loading/mathtool
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,6 +34,6 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "/Library/Developer/CommandLineTools/usr/bin/objdump")
+  set(CMAKE_OBJDUMP "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/objdump")
 endif()
 

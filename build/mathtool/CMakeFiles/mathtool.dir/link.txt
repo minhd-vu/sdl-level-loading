@@ -1,2 +1,2 @@
-/Library/Developer/CommandLineTools/usr/bin/ar qc libmathtool.a CMakeFiles/mathtool.dir/Basic.cpp.o CMakeFiles/mathtool.dir/Quaternion.cpp.o CMakeFiles/mathtool.dir/Geometry.cpp.o CMakeFiles/mathtool.dir/Box.cpp.o
-/Library/Developer/CommandLineTools/usr/bin/ranlib libmathtool.a
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar qc libmathtool.a CMakeFiles/mathtool.dir/Basic.cpp.o CMakeFiles/mathtool.dir/Quaternion.cpp.o CMakeFiles/mathtool.dir/Geometry.cpp.o CMakeFiles/mathtool.dir/Box.cpp.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib libmathtool.a
