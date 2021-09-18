@@ -1,0 +1,8 @@
+# Assignment 1
+
+Minh Vu
+G01182867
+
+## Additional Tasks
+
+- Resized `images/dragon.png` so that the hitbox was tighter, allowing for more fluid gameplay.
