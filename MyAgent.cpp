@@ -5,6 +5,12 @@
 #include <sstream>
 #include "mathtool/Box.h"
 
+template <class DstType, class SrcType>
+bool IsType(const SrcType *src)
+{
+  return dynamic_cast<const DstType *>(src) != nullptr;
+}
+
 namespace GMUCS425
 {
 
@@ -228,6 +234,10 @@ namespace GMUCS425
         {
           this->collision = true;
           this->collide_with = (MyAgent *)((e.user.data1 != this) ? e.user.data1 : e.user.data2);
+          if (IsType<MyZombieAgent>(collide_with) || IsType<MyChickenAgent>(collide_with))
+          {
+            health -= 1;
+          }
         }
       }
     }
@@ -293,10 +303,15 @@ namespace GMUCS425
     draw_bounding_box();
   }
 
+  int MyDragonAgent::getHealth()
+  {
+    return health;
+  }
+
   void MyDragonAgent::draw_HUD()
   {
     std::stringstream ss;
-    ss << "x=" << x << " y=" << y;
+    ss << "x=" << x << " y=" << y << " health=" << health;
     SDL_Renderer *renderer = getMyGame()->getRenderer();
     static TTF_Font *font = NULL;
 

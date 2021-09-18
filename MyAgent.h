@@ -135,6 +135,7 @@ namespace GMUCS425
   public:
     MyDragonAgent(bool movable = true, bool collision = true) : MyAgent(movable, collision)
     {
+      health = 100;
       dx = dy = 0;
       collide_with = NULL;
       left = false;
@@ -144,8 +145,10 @@ namespace GMUCS425
     virtual void draw_HUD();
     //render this agent
     virtual void display();
+    int getHealth();
 
   private:
+    int health;
     int dx, dy;
     bool left;
     MyAgent *collide_with;
