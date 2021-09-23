@@ -1,6 +1,0 @@
-/Users/minhvu/Documents/GitHub/sdl-level-loading/build/CMakeFiles/rebuild_cache.dir
-/Users/minhvu/Documents/GitHub/sdl-level-loading/build/CMakeFiles/edit_cache.dir
-/Users/minhvu/Documents/GitHub/sdl-level-loading/build/CMakeFiles/PA01.dir
-/Users/minhvu/Documents/GitHub/sdl-level-loading/build/mathtool/CMakeFiles/rebuild_cache.dir
-/Users/minhvu/Documents/GitHub/sdl-level-loading/build/mathtool/CMakeFiles/edit_cache.dir
-/Users/minhvu/Documents/GitHub/sdl-level-loading/build/mathtool/CMakeFiles/mathtool.dir
