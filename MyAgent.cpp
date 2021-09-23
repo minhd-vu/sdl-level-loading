@@ -13,7 +13,6 @@ bool IsType(const SrcType *src)
 
 namespace GMUCS425
 {
-
 	void MyAgent::handle_event(SDL_Event &e)
 	{
 		if (this->movable)

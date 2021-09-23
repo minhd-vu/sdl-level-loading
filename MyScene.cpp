@@ -119,6 +119,20 @@ namespace GMUCS425
 			}
 		}
 
+		// Spawn in enemy at random positions.
+		for (int i = 0; i < 100; i++)
+		{
+			MyAgent *agent = new MyChickenAgent(true);
+			assert(agent);
+			MySprite *sprite = sprite_manager->get("k");
+			assert(sprite);
+			agent->setSprite(sprite);
+			agent->rotateTo(rent->orient);
+			agent->tranlateTo(rand() % x * cell_w, rand() % y * cell_h);
+			agent->scaleTo(rent->scale);
+			this->m_agents.push_front(agent);
+		}
+
 		// read through the placement map
 		char c;
 		for (int i = 0; i < y; i++) // down (row)
