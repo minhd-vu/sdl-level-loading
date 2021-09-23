@@ -1,6 +1,7 @@
 #pragma once
 
 #include "MySprite.h"
+#include "float.h"
 
 namespace GMUCS425
 {

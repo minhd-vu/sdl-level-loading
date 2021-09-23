@@ -44,10 +44,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /usr/local/Cellar/cmake/3.21.2/bin/cmake
+CMAKE_COMMAND = /usr/local/Cellar/cmake/3.21.3/bin/cmake
 
 # The command to remove a file.
-RM = /usr/local/Cellar/cmake/3.21.2/bin/cmake -E rm -f
+RM = /usr/local/Cellar/cmake/3.21.3/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -73,57 +73,57 @@ mathtool/CMakeFiles/mathtool.dir/Basic.cpp.o: mathtool/CMakeFiles/mathtool.dir/f
 mathtool/CMakeFiles/mathtool.dir/Basic.cpp.o: ../mathtool/Basic.cpp
 mathtool/CMakeFiles/mathtool.dir/Basic.cpp.o: mathtool/CMakeFiles/mathtool.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/minhvu/Documents/GitHub/sdl-level-loading/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object mathtool/CMakeFiles/mathtool.dir/Basic.cpp.o"
-	cd /Users/minhvu/Documents/GitHub/sdl-level-loading/build/mathtool && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT mathtool/CMakeFiles/mathtool.dir/Basic.cpp.o -MF CMakeFiles/mathtool.dir/Basic.cpp.o.d -o CMakeFiles/mathtool.dir/Basic.cpp.o -c /Users/minhvu/Documents/GitHub/sdl-level-loading/mathtool/Basic.cpp
+	cd /Users/minhvu/Documents/GitHub/sdl-level-loading/build/mathtool && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT mathtool/CMakeFiles/mathtool.dir/Basic.cpp.o -MF CMakeFiles/mathtool.dir/Basic.cpp.o.d -o CMakeFiles/mathtool.dir/Basic.cpp.o -c /Users/minhvu/Documents/GitHub/sdl-level-loading/mathtool/Basic.cpp
 
 mathtool/CMakeFiles/mathtool.dir/Basic.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mathtool.dir/Basic.cpp.i"
-	cd /Users/minhvu/Documents/GitHub/sdl-level-loading/build/mathtool && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/minhvu/Documents/GitHub/sdl-level-loading/mathtool/Basic.cpp > CMakeFiles/mathtool.dir/Basic.cpp.i
+	cd /Users/minhvu/Documents/GitHub/sdl-level-loading/build/mathtool && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/minhvu/Documents/GitHub/sdl-level-loading/mathtool/Basic.cpp > CMakeFiles/mathtool.dir/Basic.cpp.i
 
 mathtool/CMakeFiles/mathtool.dir/Basic.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mathtool.dir/Basic.cpp.s"
-	cd /Users/minhvu/Documents/GitHub/sdl-level-loading/build/mathtool && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/minhvu/Documents/GitHub/sdl-level-loading/mathtool/Basic.cpp -o CMakeFiles/mathtool.dir/Basic.cpp.s
+	cd /Users/minhvu/Documents/GitHub/sdl-level-loading/build/mathtool && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/minhvu/Documents/GitHub/sdl-level-loading/mathtool/Basic.cpp -o CMakeFiles/mathtool.dir/Basic.cpp.s
 
 mathtool/CMakeFiles/mathtool.dir/Quaternion.cpp.o: mathtool/CMakeFiles/mathtool.dir/flags.make
 mathtool/CMakeFiles/mathtool.dir/Quaternion.cpp.o: ../mathtool/Quaternion.cpp
 mathtool/CMakeFiles/mathtool.dir/Quaternion.cpp.o: mathtool/CMakeFiles/mathtool.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/minhvu/Documents/GitHub/sdl-level-loading/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object mathtool/CMakeFiles/mathtool.dir/Quaternion.cpp.o"
-	cd /Users/minhvu/Documents/GitHub/sdl-level-loading/build/mathtool && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT mathtool/CMakeFiles/mathtool.dir/Quaternion.cpp.o -MF CMakeFiles/mathtool.dir/Quaternion.cpp.o.d -o CMakeFiles/mathtool.dir/Quaternion.cpp.o -c /Users/minhvu/Documents/GitHub/sdl-level-loading/mathtool/Quaternion.cpp
+	cd /Users/minhvu/Documents/GitHub/sdl-level-loading/build/mathtool && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT mathtool/CMakeFiles/mathtool.dir/Quaternion.cpp.o -MF CMakeFiles/mathtool.dir/Quaternion.cpp.o.d -o CMakeFiles/mathtool.dir/Quaternion.cpp.o -c /Users/minhvu/Documents/GitHub/sdl-level-loading/mathtool/Quaternion.cpp
 
 mathtool/CMakeFiles/mathtool.dir/Quaternion.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mathtool.dir/Quaternion.cpp.i"
-	cd /Users/minhvu/Documents/GitHub/sdl-level-loading/build/mathtool && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/minhvu/Documents/GitHub/sdl-level-loading/mathtool/Quaternion.cpp > CMakeFiles/mathtool.dir/Quaternion.cpp.i
+	cd /Users/minhvu/Documents/GitHub/sdl-level-loading/build/mathtool && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/minhvu/Documents/GitHub/sdl-level-loading/mathtool/Quaternion.cpp > CMakeFiles/mathtool.dir/Quaternion.cpp.i
 
 mathtool/CMakeFiles/mathtool.dir/Quaternion.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mathtool.dir/Quaternion.cpp.s"
-	cd /Users/minhvu/Documents/GitHub/sdl-level-loading/build/mathtool && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/minhvu/Documents/GitHub/sdl-level-loading/mathtool/Quaternion.cpp -o CMakeFiles/mathtool.dir/Quaternion.cpp.s
+	cd /Users/minhvu/Documents/GitHub/sdl-level-loading/build/mathtool && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/minhvu/Documents/GitHub/sdl-level-loading/mathtool/Quaternion.cpp -o CMakeFiles/mathtool.dir/Quaternion.cpp.s
 
 mathtool/CMakeFiles/mathtool.dir/Geometry.cpp.o: mathtool/CMakeFiles/mathtool.dir/flags.make
 mathtool/CMakeFiles/mathtool.dir/Geometry.cpp.o: ../mathtool/Geometry.cpp
 mathtool/CMakeFiles/mathtool.dir/Geometry.cpp.o: mathtool/CMakeFiles/mathtool.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/minhvu/Documents/GitHub/sdl-level-loading/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object mathtool/CMakeFiles/mathtool.dir/Geometry.cpp.o"
-	cd /Users/minhvu/Documents/GitHub/sdl-level-loading/build/mathtool && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT mathtool/CMakeFiles/mathtool.dir/Geometry.cpp.o -MF CMakeFiles/mathtool.dir/Geometry.cpp.o.d -o CMakeFiles/mathtool.dir/Geometry.cpp.o -c /Users/minhvu/Documents/GitHub/sdl-level-loading/mathtool/Geometry.cpp
+	cd /Users/minhvu/Documents/GitHub/sdl-level-loading/build/mathtool && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT mathtool/CMakeFiles/mathtool.dir/Geometry.cpp.o -MF CMakeFiles/mathtool.dir/Geometry.cpp.o.d -o CMakeFiles/mathtool.dir/Geometry.cpp.o -c /Users/minhvu/Documents/GitHub/sdl-level-loading/mathtool/Geometry.cpp
 
 mathtool/CMakeFiles/mathtool.dir/Geometry.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mathtool.dir/Geometry.cpp.i"
-	cd /Users/minhvu/Documents/GitHub/sdl-level-loading/build/mathtool && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/minhvu/Documents/GitHub/sdl-level-loading/mathtool/Geometry.cpp > CMakeFiles/mathtool.dir/Geometry.cpp.i
+	cd /Users/minhvu/Documents/GitHub/sdl-level-loading/build/mathtool && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/minhvu/Documents/GitHub/sdl-level-loading/mathtool/Geometry.cpp > CMakeFiles/mathtool.dir/Geometry.cpp.i
 
 mathtool/CMakeFiles/mathtool.dir/Geometry.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mathtool.dir/Geometry.cpp.s"
-	cd /Users/minhvu/Documents/GitHub/sdl-level-loading/build/mathtool && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/minhvu/Documents/GitHub/sdl-level-loading/mathtool/Geometry.cpp -o CMakeFiles/mathtool.dir/Geometry.cpp.s
+	cd /Users/minhvu/Documents/GitHub/sdl-level-loading/build/mathtool && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/minhvu/Documents/GitHub/sdl-level-loading/mathtool/Geometry.cpp -o CMakeFiles/mathtool.dir/Geometry.cpp.s
 
 mathtool/CMakeFiles/mathtool.dir/Box.cpp.o: mathtool/CMakeFiles/mathtool.dir/flags.make
 mathtool/CMakeFiles/mathtool.dir/Box.cpp.o: ../mathtool/Box.cpp
 mathtool/CMakeFiles/mathtool.dir/Box.cpp.o: mathtool/CMakeFiles/mathtool.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/minhvu/Documents/GitHub/sdl-level-loading/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object mathtool/CMakeFiles/mathtool.dir/Box.cpp.o"
-	cd /Users/minhvu/Documents/GitHub/sdl-level-loading/build/mathtool && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT mathtool/CMakeFiles/mathtool.dir/Box.cpp.o -MF CMakeFiles/mathtool.dir/Box.cpp.o.d -o CMakeFiles/mathtool.dir/Box.cpp.o -c /Users/minhvu/Documents/GitHub/sdl-level-loading/mathtool/Box.cpp
+	cd /Users/minhvu/Documents/GitHub/sdl-level-loading/build/mathtool && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT mathtool/CMakeFiles/mathtool.dir/Box.cpp.o -MF CMakeFiles/mathtool.dir/Box.cpp.o.d -o CMakeFiles/mathtool.dir/Box.cpp.o -c /Users/minhvu/Documents/GitHub/sdl-level-loading/mathtool/Box.cpp
 
 mathtool/CMakeFiles/mathtool.dir/Box.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mathtool.dir/Box.cpp.i"
-	cd /Users/minhvu/Documents/GitHub/sdl-level-loading/build/mathtool && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/minhvu/Documents/GitHub/sdl-level-loading/mathtool/Box.cpp > CMakeFiles/mathtool.dir/Box.cpp.i
+	cd /Users/minhvu/Documents/GitHub/sdl-level-loading/build/mathtool && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/minhvu/Documents/GitHub/sdl-level-loading/mathtool/Box.cpp > CMakeFiles/mathtool.dir/Box.cpp.i
 
 mathtool/CMakeFiles/mathtool.dir/Box.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mathtool.dir/Box.cpp.s"
-	cd /Users/minhvu/Documents/GitHub/sdl-level-loading/build/mathtool && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/minhvu/Documents/GitHub/sdl-level-loading/mathtool/Box.cpp -o CMakeFiles/mathtool.dir/Box.cpp.s
+	cd /Users/minhvu/Documents/GitHub/sdl-level-loading/build/mathtool && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/minhvu/Documents/GitHub/sdl-level-loading/mathtool/Box.cpp -o CMakeFiles/mathtool.dir/Box.cpp.s
 
 # Object files for target mathtool
 mathtool_OBJECTS = \

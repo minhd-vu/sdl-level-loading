@@ -44,10 +44,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /usr/local/Cellar/cmake/3.21.2/bin/cmake
+CMAKE_COMMAND = /usr/local/Cellar/cmake/3.21.3/bin/cmake
 
 # The command to remove a file.
-RM = /usr/local/Cellar/cmake/3.21.2/bin/cmake -E rm -f
+RM = /usr/local/Cellar/cmake/3.21.3/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -73,85 +73,85 @@ CMakeFiles/PA01.dir/MyAgent.cpp.o: CMakeFiles/PA01.dir/flags.make
 CMakeFiles/PA01.dir/MyAgent.cpp.o: ../MyAgent.cpp
 CMakeFiles/PA01.dir/MyAgent.cpp.o: CMakeFiles/PA01.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/minhvu/Documents/GitHub/sdl-level-loading/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/PA01.dir/MyAgent.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/PA01.dir/MyAgent.cpp.o -MF CMakeFiles/PA01.dir/MyAgent.cpp.o.d -o CMakeFiles/PA01.dir/MyAgent.cpp.o -c /Users/minhvu/Documents/GitHub/sdl-level-loading/MyAgent.cpp
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/PA01.dir/MyAgent.cpp.o -MF CMakeFiles/PA01.dir/MyAgent.cpp.o.d -o CMakeFiles/PA01.dir/MyAgent.cpp.o -c /Users/minhvu/Documents/GitHub/sdl-level-loading/MyAgent.cpp
 
 CMakeFiles/PA01.dir/MyAgent.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PA01.dir/MyAgent.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/minhvu/Documents/GitHub/sdl-level-loading/MyAgent.cpp > CMakeFiles/PA01.dir/MyAgent.cpp.i
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/minhvu/Documents/GitHub/sdl-level-loading/MyAgent.cpp > CMakeFiles/PA01.dir/MyAgent.cpp.i
 
 CMakeFiles/PA01.dir/MyAgent.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PA01.dir/MyAgent.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/minhvu/Documents/GitHub/sdl-level-loading/MyAgent.cpp -o CMakeFiles/PA01.dir/MyAgent.cpp.s
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/minhvu/Documents/GitHub/sdl-level-loading/MyAgent.cpp -o CMakeFiles/PA01.dir/MyAgent.cpp.s
 
 CMakeFiles/PA01.dir/MyGame.cpp.o: CMakeFiles/PA01.dir/flags.make
 CMakeFiles/PA01.dir/MyGame.cpp.o: ../MyGame.cpp
 CMakeFiles/PA01.dir/MyGame.cpp.o: CMakeFiles/PA01.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/minhvu/Documents/GitHub/sdl-level-loading/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/PA01.dir/MyGame.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/PA01.dir/MyGame.cpp.o -MF CMakeFiles/PA01.dir/MyGame.cpp.o.d -o CMakeFiles/PA01.dir/MyGame.cpp.o -c /Users/minhvu/Documents/GitHub/sdl-level-loading/MyGame.cpp
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/PA01.dir/MyGame.cpp.o -MF CMakeFiles/PA01.dir/MyGame.cpp.o.d -o CMakeFiles/PA01.dir/MyGame.cpp.o -c /Users/minhvu/Documents/GitHub/sdl-level-loading/MyGame.cpp
 
 CMakeFiles/PA01.dir/MyGame.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PA01.dir/MyGame.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/minhvu/Documents/GitHub/sdl-level-loading/MyGame.cpp > CMakeFiles/PA01.dir/MyGame.cpp.i
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/minhvu/Documents/GitHub/sdl-level-loading/MyGame.cpp > CMakeFiles/PA01.dir/MyGame.cpp.i
 
 CMakeFiles/PA01.dir/MyGame.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PA01.dir/MyGame.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/minhvu/Documents/GitHub/sdl-level-loading/MyGame.cpp -o CMakeFiles/PA01.dir/MyGame.cpp.s
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/minhvu/Documents/GitHub/sdl-level-loading/MyGame.cpp -o CMakeFiles/PA01.dir/MyGame.cpp.s
 
 CMakeFiles/PA01.dir/MyScene.cpp.o: CMakeFiles/PA01.dir/flags.make
 CMakeFiles/PA01.dir/MyScene.cpp.o: ../MyScene.cpp
 CMakeFiles/PA01.dir/MyScene.cpp.o: CMakeFiles/PA01.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/minhvu/Documents/GitHub/sdl-level-loading/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/PA01.dir/MyScene.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/PA01.dir/MyScene.cpp.o -MF CMakeFiles/PA01.dir/MyScene.cpp.o.d -o CMakeFiles/PA01.dir/MyScene.cpp.o -c /Users/minhvu/Documents/GitHub/sdl-level-loading/MyScene.cpp
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/PA01.dir/MyScene.cpp.o -MF CMakeFiles/PA01.dir/MyScene.cpp.o.d -o CMakeFiles/PA01.dir/MyScene.cpp.o -c /Users/minhvu/Documents/GitHub/sdl-level-loading/MyScene.cpp
 
 CMakeFiles/PA01.dir/MyScene.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PA01.dir/MyScene.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/minhvu/Documents/GitHub/sdl-level-loading/MyScene.cpp > CMakeFiles/PA01.dir/MyScene.cpp.i
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/minhvu/Documents/GitHub/sdl-level-loading/MyScene.cpp > CMakeFiles/PA01.dir/MyScene.cpp.i
 
 CMakeFiles/PA01.dir/MyScene.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PA01.dir/MyScene.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/minhvu/Documents/GitHub/sdl-level-loading/MyScene.cpp -o CMakeFiles/PA01.dir/MyScene.cpp.s
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/minhvu/Documents/GitHub/sdl-level-loading/MyScene.cpp -o CMakeFiles/PA01.dir/MyScene.cpp.s
 
 CMakeFiles/PA01.dir/MySprite.cpp.o: CMakeFiles/PA01.dir/flags.make
 CMakeFiles/PA01.dir/MySprite.cpp.o: ../MySprite.cpp
 CMakeFiles/PA01.dir/MySprite.cpp.o: CMakeFiles/PA01.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/minhvu/Documents/GitHub/sdl-level-loading/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/PA01.dir/MySprite.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/PA01.dir/MySprite.cpp.o -MF CMakeFiles/PA01.dir/MySprite.cpp.o.d -o CMakeFiles/PA01.dir/MySprite.cpp.o -c /Users/minhvu/Documents/GitHub/sdl-level-loading/MySprite.cpp
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/PA01.dir/MySprite.cpp.o -MF CMakeFiles/PA01.dir/MySprite.cpp.o.d -o CMakeFiles/PA01.dir/MySprite.cpp.o -c /Users/minhvu/Documents/GitHub/sdl-level-loading/MySprite.cpp
 
 CMakeFiles/PA01.dir/MySprite.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PA01.dir/MySprite.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/minhvu/Documents/GitHub/sdl-level-loading/MySprite.cpp > CMakeFiles/PA01.dir/MySprite.cpp.i
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/minhvu/Documents/GitHub/sdl-level-loading/MySprite.cpp > CMakeFiles/PA01.dir/MySprite.cpp.i
 
 CMakeFiles/PA01.dir/MySprite.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PA01.dir/MySprite.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/minhvu/Documents/GitHub/sdl-level-loading/MySprite.cpp -o CMakeFiles/PA01.dir/MySprite.cpp.s
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/minhvu/Documents/GitHub/sdl-level-loading/MySprite.cpp -o CMakeFiles/PA01.dir/MySprite.cpp.s
 
 CMakeFiles/PA01.dir/MyTexture.cpp.o: CMakeFiles/PA01.dir/flags.make
 CMakeFiles/PA01.dir/MyTexture.cpp.o: ../MyTexture.cpp
 CMakeFiles/PA01.dir/MyTexture.cpp.o: CMakeFiles/PA01.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/minhvu/Documents/GitHub/sdl-level-loading/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/PA01.dir/MyTexture.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/PA01.dir/MyTexture.cpp.o -MF CMakeFiles/PA01.dir/MyTexture.cpp.o.d -o CMakeFiles/PA01.dir/MyTexture.cpp.o -c /Users/minhvu/Documents/GitHub/sdl-level-loading/MyTexture.cpp
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/PA01.dir/MyTexture.cpp.o -MF CMakeFiles/PA01.dir/MyTexture.cpp.o.d -o CMakeFiles/PA01.dir/MyTexture.cpp.o -c /Users/minhvu/Documents/GitHub/sdl-level-loading/MyTexture.cpp
 
 CMakeFiles/PA01.dir/MyTexture.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PA01.dir/MyTexture.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/minhvu/Documents/GitHub/sdl-level-loading/MyTexture.cpp > CMakeFiles/PA01.dir/MyTexture.cpp.i
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/minhvu/Documents/GitHub/sdl-level-loading/MyTexture.cpp > CMakeFiles/PA01.dir/MyTexture.cpp.i
 
 CMakeFiles/PA01.dir/MyTexture.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PA01.dir/MyTexture.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/minhvu/Documents/GitHub/sdl-level-loading/MyTexture.cpp -o CMakeFiles/PA01.dir/MyTexture.cpp.s
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/minhvu/Documents/GitHub/sdl-level-loading/MyTexture.cpp -o CMakeFiles/PA01.dir/MyTexture.cpp.s
 
 CMakeFiles/PA01.dir/main.cpp.o: CMakeFiles/PA01.dir/flags.make
 CMakeFiles/PA01.dir/main.cpp.o: ../main.cpp
 CMakeFiles/PA01.dir/main.cpp.o: CMakeFiles/PA01.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/minhvu/Documents/GitHub/sdl-level-loading/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/PA01.dir/main.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/PA01.dir/main.cpp.o -MF CMakeFiles/PA01.dir/main.cpp.o.d -o CMakeFiles/PA01.dir/main.cpp.o -c /Users/minhvu/Documents/GitHub/sdl-level-loading/main.cpp
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/PA01.dir/main.cpp.o -MF CMakeFiles/PA01.dir/main.cpp.o.d -o CMakeFiles/PA01.dir/main.cpp.o -c /Users/minhvu/Documents/GitHub/sdl-level-loading/main.cpp
 
 CMakeFiles/PA01.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PA01.dir/main.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/minhvu/Documents/GitHub/sdl-level-loading/main.cpp > CMakeFiles/PA01.dir/main.cpp.i
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/minhvu/Documents/GitHub/sdl-level-loading/main.cpp > CMakeFiles/PA01.dir/main.cpp.i
 
 CMakeFiles/PA01.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PA01.dir/main.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/minhvu/Documents/GitHub/sdl-level-loading/main.cpp -o CMakeFiles/PA01.dir/main.cpp.s
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/minhvu/Documents/GitHub/sdl-level-loading/main.cpp -o CMakeFiles/PA01.dir/main.cpp.s
 
 # Object files for target PA01
 PA01_OBJECTS = \
