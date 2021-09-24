@@ -4,6 +4,7 @@
 #include <SDL_ttf.h>
 #include <sstream>
 #include "mathtool/Box.h"
+#include "mathtool/Vector.h"
 
 namespace GMUCS425
 {
@@ -181,9 +182,10 @@ namespace GMUCS425
 		}		  //end if
 	}
 
-	void MyChickenAgent::update(MyAgent *player, std::list<MyChickenAgent *> m_enemies)
+	void MyChickenAgent::update(MyAgent *player, std::list<MyChickenAgent *> enemies)
 	{
 		//std::cout<<"this->collision_free_timer="<<this->collision_free_timer<<std::endl;
+		using namespace mathtool;
 
 		if (!this->collision)
 		{
@@ -193,6 +195,36 @@ namespace GMUCS425
 				collide_with = NULL; //no collision
 		}
 		this->collision = false;
+
+		Vector2d position = Vector2d(x, y);
+		// do something on the positino of the player to the current chicken agent.
+
+		float distance = (position - Vector2d(player->getX(), player->getY())).normsqr();
+		if (distance < (6400))
+		{
+			// std::cout << "enemy is close!" << distance << "\n";
+		}
+
+		Vector2d velocity = Vector2d(0, 0);
+		// do something on the position of enemies
+		for (MyChickenAgent *enemy : enemies)
+		{
+			Vector2d diff = Vector2d(enemy->x, enemy->y) - position;
+			float distance_sqr = diff.normsqr();
+			if (distance_sqr < innerRadius * innerRadius)
+			{
+				velocity = velocity - diff;
+			}
+			else if (distance_sqr > outerRadius * outerRadius)
+			{
+				velocity = velocity + diff / distance_sqr;
+			}
+		}
+
+		velocity = velocity.normalize();
+
+		x += velocity[0];
+		y += velocity[1];
 
 		// std::cout << m_enemies.size() << "\n";
 

@@ -123,7 +123,7 @@ namespace GMUCS425
 		// Spawn in enemy at random positions.
 		for (int i = 0; i < 100; i++)
 		{
-			MyChickenAgent *agent = new MyChickenAgent(16 * 2, 16 * 5, true);
+			MyChickenAgent *agent = new MyChickenAgent(16 * 4, 16 * 8, true);
 			assert(agent);
 			MySprite *sprite = sprite_manager->get("k");
 			assert(sprite);
