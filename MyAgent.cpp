@@ -197,7 +197,7 @@ namespace GMUCS425
 		this->collision = false;
 
 		Vector2d position = Vector2d(x, y);
-		// do something on the positino of the player to the current chicken agent.
+		// do something on the position of the player to the current chicken agent.
 
 		float distance = (position - Vector2d(player->getX(), player->getY())).normsqr();
 		if (distance < (6400))
