@@ -12,6 +12,11 @@
 
 namespace GMUCS425
 {
+	template <class DstType, class SrcType>
+	bool IsType(const SrcType *src)
+	{
+		return dynamic_cast<const DstType *>(src) != nullptr;
+	}
 
 	class MyGame; //define later in this file
 	MyGame *getMyGame();

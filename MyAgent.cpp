@@ -5,12 +5,6 @@
 #include <sstream>
 #include "mathtool/Box.h"
 
-template <class DstType, class SrcType>
-bool IsType(const SrcType *src)
-{
-	return dynamic_cast<const DstType *>(src) != nullptr;
-}
-
 namespace GMUCS425
 {
 	void MyAgent::handle_event(SDL_Event &e)
@@ -187,7 +181,7 @@ namespace GMUCS425
 		}		  //end if
 	}
 
-	void MyChickenAgent::update()
+	void MyChickenAgent::update(MyAgent *player, std::list<MyChickenAgent *> m_enemies)
 	{
 		//std::cout<<"this->collision_free_timer="<<this->collision_free_timer<<std::endl;
 
@@ -200,25 +194,27 @@ namespace GMUCS425
 		}
 		this->collision = false;
 
-		if (radius == FLT_MAX)
-		{
-			radius = 30;
-			center_x = x;
-			center_y = y - radius;
-		}
+		// std::cout << m_enemies.size() << "\n";
 
-		float angle = (ccw) ? 0.1 : -0.1;
-		float cos_t = cos(angle);
-		float sin_t = sin(angle);
+		// if (radius == FLT_MAX)
+		// {
+		// 	radius = 30;
+		// 	center_x = x;
+		// 	center_y = y - radius;
+		// }
 
-		float dx = x - center_x;
-		float dy = y - center_y;
-		float d = sqrt(dx * dx + dy * dy);
-		dx = dx / d;
-		dy = dy / d;
+		// float angle = (ccw) ? 0.1 : -0.1;
+		// float cos_t = cos(angle);
+		// float sin_t = sin(angle);
 
-		x = (int)((cos_t * dx - sin_t * dy) * radius) + center_x;
-		y = (int)((sin_t * dx + cos_t * dy) * radius) + center_y;
+		// float dx = x - center_x;
+		// float dy = y - center_y;
+		// float d = sqrt(dx * dx + dy * dy);
+		// dx = dx / d;
+		// dy = dy / d;
+
+		// x = (int)((cos_t * dx - sin_t * dy) * radius) + center_x;
+		// y = (int)((sin_t * dx + cos_t * dy) * radius) + center_y;
 	}
 
 	void MyDragonAgent::handle_event(SDL_Event &e)

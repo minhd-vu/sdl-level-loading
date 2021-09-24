@@ -112,19 +112,21 @@ namespace GMUCS425
 	class MyChickenAgent : public MyAgent
 	{
 	public:
-		MyChickenAgent(bool movable = true, bool collision = true) : MyAgent(movable, collision)
+		MyChickenAgent(float innerRadius, float outerRadius, bool movable = true, bool collision = true) : MyAgent(movable, collision)
 		{
+			this->innerRadius = innerRadius;
+			this->outerRadius = outerRadius;
 			radius = FLT_MAX;
 			center_x = center_y = INT_MAX;
 			ccw = false;
 			collide_with = NULL;
 		}
-		virtual void update();
+		virtual void update(MyAgent *player, std::list<MyChickenAgent *> m_enemies);
 		virtual void display();
 		virtual void handle_event(SDL_Event &e);
 
 	private:
-		float radius;
+		float radius, innerRadius, outerRadius;
 		int center_x, center_y;
 		bool ccw;
 		MyAgent *collide_with;

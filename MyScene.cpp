@@ -123,15 +123,17 @@ namespace GMUCS425
 		// Spawn in enemy at random positions.
 		for (int i = 0; i < 100; i++)
 		{
-			MyAgent *agent = new MyChickenAgent(true);
+			MyChickenAgent *agent = new MyChickenAgent(16 * 2, 16 * 5, true);
 			assert(agent);
 			MySprite *sprite = sprite_manager->get("k");
 			assert(sprite);
 			agent->setSprite(sprite);
 			agent->rotateTo(rent->orient);
+			// std::cout << cell_w << " " << cell_h << "\n";
 			agent->tranlateTo(rand() % x * cell_w, rand() % y * cell_h);
 			agent->scaleTo(rent->scale);
 			this->m_agents.push_front(agent);
+			this->m_enemies.push_front(agent);
 		}
 
 		// spawn in player at center.
@@ -145,6 +147,7 @@ namespace GMUCS425
 		agent->tranlateTo(x * cell_w / 2, y * cell_h / 2);
 		agent->scaleTo(rent->scale);
 		this->m_agents.push_front(agent);
+		this->m_player = agent;
 
 		rent = objs["w"];
 		// Spawn in enemy at random obstacles.
@@ -178,8 +181,8 @@ namespace GMUCS425
 
 					if (c == 'z')
 						agent = new MyZombieAgent(true);
-					else if (c == 'k')
-						agent = new MyChickenAgent(true);
+					// else if (c == 'k')
+					// agent = new MyChickenAgent(true);
 					else if (c == 'd')
 						agent = new MyDragonAgent(true);
 					else
@@ -193,10 +196,10 @@ namespace GMUCS425
 					agent->tranlateTo(j * cell_w, i * cell_h);
 					agent->scaleTo(rent->scale);
 
-					if (c == 'z' || c == 'k' || c == 'd')
-						this->m_agents.push_front(agent); //remember
-					else
-						this->m_agents.push_back(agent); //remember
+					// if (c == 'z' || c == 'k' || c == 'd')
+					// 	this->m_agents.push_front(agent); //remember
+					// else
+					// 	this->m_agents.push_back(agent); //remember
 				}
 				else // rent==null, not an object or agent
 				{
@@ -233,7 +236,13 @@ namespace GMUCS425
 		this->broad_range_collision();
 		for (MyAgent *agent : this->m_agents)
 		{
-			agent->update();
+			if (IsType<MyChickenAgent>(agent))
+			{
+				MyChickenAgent *chicken = (MyChickenAgent *)agent;
+				chicken->update(m_player, m_enemies);
+			}
+			else
+				agent->update();
 		}
 	}
 
