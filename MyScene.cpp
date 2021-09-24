@@ -119,6 +119,7 @@ namespace GMUCS425
 			}
 		}
 
+		rent = objs["k"];
 		// Spawn in enemy at random positions.
 		for (int i = 0; i < 100; i++)
 		{
@@ -131,6 +132,33 @@ namespace GMUCS425
 			agent->tranlateTo(rand() % x * cell_w, rand() % y * cell_h);
 			agent->scaleTo(rent->scale);
 			this->m_agents.push_front(agent);
+		}
+
+		// spawn in player at center.
+		rent = objs["d"];
+		MyAgent *agent = new MyDragonAgent(true);
+		assert(agent);
+		MySprite *sprite = sprite_manager->get("d");
+		assert(sprite);
+		agent->setSprite(sprite);
+		agent->rotateTo(rent->orient);
+		agent->tranlateTo(x * cell_w / 2, y * cell_h / 2);
+		agent->scaleTo(rent->scale);
+		this->m_agents.push_front(agent);
+
+		rent = objs["w"];
+		// Spawn in enemy at random obstacles.
+		for (int i = 0; i < 20; i++)
+		{
+			MyAgent *agent = new MyAgent(rent->agent);
+			assert(agent);
+			MySprite *sprite = sprite_manager->get("w");
+			assert(sprite);
+			agent->setSprite(sprite);
+			agent->rotateTo(rent->orient);
+			agent->tranlateTo(rand() % x * cell_w, rand() % y * cell_h);
+			agent->scaleTo(rent->scale);
+			this->m_agents.push_back(agent);
 		}
 
 		// read through the placement map
