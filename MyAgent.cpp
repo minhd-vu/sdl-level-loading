@@ -231,12 +231,12 @@ namespace GMUCS425
 			{
 				if (e.user.data1 == this || e.user.data2 == this)
 				{
-					this->collision = true;
-					this->collide_with = (MyAgent *)((e.user.data1 != this) ? e.user.data1 : e.user.data2);
-					if (IsType<MyZombieAgent>(collide_with) || IsType<MyChickenAgent>(collide_with))
-					{
-						health -= 1;
-					}
+					// this->collision = true;
+					// this->collide_with = (MyAgent *)((e.user.data1 != this) ? e.user.data1 : e.user.data2);
+					// if (IsType<MyZombieAgent>(collide_with) || IsType<MyChickenAgent>(collide_with))
+					// {
+					// 	health -= 1;
+					// }
 				}
 			}
 		}
@@ -272,24 +272,24 @@ namespace GMUCS425
 
 	void MyDragonAgent::update()
 	{
-		if (this->collision && this->collide_with)
-		{
-			int vx = this->collide_with->getX() - x;
-			int vy = this->collide_with->getY() - y;
-			if ((dx == 0 && dy == 0) || (vx * dx + vy * dy) <= 0)
-			{
-				float d = 1.0 / sqrt((vx * vx) + (vy * vy));
-				dx = vx * d;
-				dy = vy * d;
-			}
+		// if (this->collision && this->collide_with)
+		// {
+		// 	int vx = this->collide_with->getX() - x;
+		// 	int vy = this->collide_with->getY() - y;
+		// 	if ((dx == 0 && dy == 0) || (vx * dx + vy * dy) <= 0)
+		// 	{
+		// 		float d = 1.0 / sqrt((vx * vx) + (vy * vy));
+		// 		dx = vx * d;
+		// 		dy = vy * d;
+		// 	}
 
-			x -= dx;
-			y -= dy;
-			dx /= 2;
-			dy /= 2;
-		}
+		// 	x -= dx;
+		// 	y -= dy;
+		// 	dx /= 2;
+		// 	dy /= 2;
+		// }
 
-		this->collision = false;
+		// this->collision = false;
 	}
 
 	void MyDragonAgent::display()
