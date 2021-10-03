@@ -231,7 +231,7 @@ namespace GMUCS425
 					ccw = !ccw;
 				}
 
-				this->collision_free_timer = 10;
+				this->collision_free_timer = collision_free_time;
 				this->collision = true;
 			}
 		}
@@ -245,9 +245,14 @@ namespace GMUCS425
 		if (!this->collision)
 		{
 			if (collision_free_timer >= 0)
-				this->collision_free_timer--;
+			{
+				collision_free_timer--;
+				velocity = velocity - velocity / collision_free_time;
+			}
 			else
-				collide_with = NULL; //no collision
+			{
+				collide_with = NULL;
+			}
 		}
 		this->collision = false;
 
@@ -257,14 +262,7 @@ namespace GMUCS425
 
 		float distance = (position - Vector2d(player->getX(), player->getY())).normsqr();
 
-		if (distance < (2000))
-		{
-			this->scaleTo(0.3);
-		}
-		else
-		{
-			this->scaleTo(0.15);
-		}
+		this->scaleTo(distance < 2000 ? 0.3 : 0.15);
 
 		// do something on the position of enemies
 		for (MyAgent *agent : agents)

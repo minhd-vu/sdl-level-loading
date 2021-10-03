@@ -144,6 +144,7 @@ namespace GMUCS425
 			ccw = false;
 			collide_with = NULL;
 			velocity = mathtool::Vector2d(0, 0);
+			collision_free_timer = collision_free_time;
 		}
 		virtual void update(MyAgent *player, std::list<MyAgent *> agents);
 		virtual void display();
@@ -155,7 +156,8 @@ namespace GMUCS425
 		int center_x, center_y;
 		bool ccw;
 		MyAgent *collide_with;
-		int collision_free_timer = 10;
+		int collision_free_timer;
+		const int collision_free_time = 10;
 	};
 
 	class MyDragonAgent : public MyAgent
