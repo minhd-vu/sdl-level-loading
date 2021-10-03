@@ -42,7 +42,6 @@ namespace GMUCS425
 		virtual int broad_range_collision();
 
 		MyAgent *m_player;
-		std::list<MyChickenAgent *> m_enemies;
 		std::list<MyAgent *> m_agents;
 		MyAgent *m_backdrop;
 		bool m_active;

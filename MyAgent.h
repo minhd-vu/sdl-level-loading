@@ -2,6 +2,8 @@
 
 #include "MySprite.h"
 #include "float.h"
+#include "mathtool/Box.h"
+#include "mathtool/Vector.h"
 
 namespace GMUCS425
 {
@@ -141,12 +143,14 @@ namespace GMUCS425
 			center_x = center_y = INT_MAX;
 			ccw = false;
 			collide_with = NULL;
+			velocity = mathtool::Vector2d(0, 0);
 		}
-		virtual void update(MyAgent *player, std::list<MyChickenAgent *> m_enemies);
+		virtual void update(MyAgent *player, std::list<MyAgent *> agents);
 		virtual void display();
 		virtual void handle_event(SDL_Event &e);
 
 	private:
+		mathtool::Vector2d velocity;
 		float radius, innerRadius, outerRadius;
 		int center_x, center_y;
 		bool ccw;

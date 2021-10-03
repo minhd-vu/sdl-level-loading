@@ -3,8 +3,6 @@
 #include <SDL_image.h>
 #include <SDL_ttf.h>
 #include <sstream>
-#include "mathtool/Box.h"
-#include "mathtool/Vector.h"
 
 namespace GMUCS425
 {
@@ -82,7 +80,7 @@ namespace GMUCS425
 			return; //not visible...
 		//setup positions and ask sprite to draw something
 		this->sprite->display(x, y, scale, degree, NULL, this->left ? SDL_FLIP_NONE : SDL_FLIP_HORIZONTAL);
-		draw_bounding_box();
+		// draw_bounding_box();
 	}
 
 	void MyZombieAgent::update()
@@ -147,7 +145,7 @@ namespace GMUCS425
 			return; //not visible...
 		//setup positions and ask sprite to draw something
 		this->sprite->display(x, y, scale, degree, NULL, this->up ? SDL_FLIP_NONE : SDL_FLIP_HORIZONTAL);
-		draw_bounding_box();
+		// draw_bounding_box();
 	}
 
 	void MyCloudAgent::update()
@@ -212,42 +210,34 @@ namespace GMUCS425
 			return; //not visible...
 		//setup positions and ask sprite to draw something
 		this->sprite->display(x, y, scale, degree, NULL, this->ccw ? SDL_FLIP_HORIZONTAL : SDL_FLIP_NONE);
-		draw_bounding_box();
+		// draw_bounding_box();
 	}
 
 	void MyChickenAgent::handle_event(SDL_Event &e)
 	{
-		//std::cout<<"--------------------------------------"<<std::endl;
 		if (this->collision && collide_with != NULL)
 		{
-			//std::cout<<"already in collision with "<<collide_with<<std::endl;
-
 			return;
 		}
-		//else
-		//  std::cout<<"NO in collision: this->collision="<<this->collision<<" with "<<collide_with<<std::endl;
 
-		if (e.type == SDL_USEREVENT)
+		if (e.type == SDL_USEREVENT && e.user.code == 1 && (e.user.data1 == this || e.user.data2 == this))
 		{
-			if (e.user.code == 1)
+			MyAgent *other = (MyAgent *)((e.user.data1 != this) ? e.user.data1 : e.user.data2);
+			if (!IsType<MyDragonAgent>(other) && !IsType<MyChickenAgent>(other))
 			{
-				if (e.user.data1 == this || e.user.data2 == this)
+				if (other != this->collide_with)
 				{
-					MyAgent *other = (MyAgent *)((e.user.data1 != this) ? e.user.data1 : e.user.data2);
-					if (other != this->collide_with)
-					{
-						//std::cout<<"changed to: "<<other<<" from " << collide_with<<std::endl;
-						collide_with = other;
-						ccw = !ccw;
-					}
-					this->collision_free_timer = 10;
-					this->collision = true;
-				} //end if
-			}		//end if
-		}			//end if
+					collide_with = other;
+					ccw = !ccw;
+				}
+
+				this->collision_free_timer = 10;
+				this->collision = true;
+			}
+		}
 	}
 
-	void MyChickenAgent::update(MyAgent *player, std::list<MyChickenAgent *> enemies)
+	void MyChickenAgent::update(MyAgent *player, std::list<MyAgent *> agents)
 	{
 		//std::cout<<"this->collision_free_timer="<<this->collision_free_timer<<std::endl;
 		using namespace mathtool;
@@ -262,40 +252,49 @@ namespace GMUCS425
 		this->collision = false;
 
 		Vector2d position = Vector2d(x, y);
+		Vector2d acceleration = Vector2d(0, 0);
 		// do something on the position of the player to the current chicken agent.
 
 		float distance = (position - Vector2d(player->getX(), player->getY())).normsqr();
-		if (distance < (6400))
+		if (distance < 6400)
 		{
-			// std::cout << "enemy is close!" << distance << "\n";
+			// agents.remove(this);
 		}
 
-		Vector2d velocity = Vector2d(0, 0);
 		// do something on the position of enemies
-		for (MyChickenAgent *enemy : enemies)
+		for (MyAgent *agent : agents)
 		{
-			Vector2d diff = Vector2d(enemy->x, enemy->y) - position;
-			float distance_sqr = diff.normsqr();
-			if (distance_sqr < innerRadius * innerRadius)
+			if (IsType<MyChickenAgent>(agent))
 			{
-				velocity = velocity - diff;
-			}
-			else if (distance_sqr > outerRadius * outerRadius)
-			{
-				velocity = velocity + diff / distance_sqr;
+				MyChickenAgent *enemy = (MyChickenAgent *)agent;
+				Vector2d diff = Vector2d(enemy->x, enemy->y) - position;
+				float distance_sqr = diff.normsqr();
+				if (distance_sqr < innerRadius * innerRadius)
+				{
+					acceleration = acceleration - diff;
+				}
+				else if (distance_sqr > outerRadius * outerRadius)
+				{
+					acceleration = acceleration + diff / distance_sqr;
+				}
 			}
 		}
 
-		velocity = velocity.normalize();
+		acceleration = acceleration.normalize() / 10;
 
-		if (collide_with) {
-			x -= velocity[0];
-			y -= velocity[1];
+		if (collide_with)
+		{
+			std::cout << "COLLISION\n";
+			position = position - velocity;
 		}
-		else {
-			x += velocity[0];
-			y += velocity[1];
+		else
+		{
+			velocity += acceleration;
+			position += velocity;
 		}
+
+		x = position[0];
+		y = position[1];
 
 		// std::cout << m_enemies.size() << "\n";
 
@@ -398,7 +397,7 @@ namespace GMUCS425
 			return; //not visible...
 		//setup positions and ask sprite to draw something
 		this->sprite->display(x, y, scale, degree, NULL, this->left ? SDL_FLIP_HORIZONTAL : SDL_FLIP_NONE);
-		draw_bounding_box();
+		// draw_bounding_box();
 	}
 
 	int MyDragonAgent::getHealth()
