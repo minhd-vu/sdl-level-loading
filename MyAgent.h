@@ -108,6 +108,23 @@ namespace GMUCS425
 		MyAgent *collide_with;
 		int collision_free_timer = 10;
 	};
+	
+	class MyCloudAgent : public MyAgent
+    {
+    public:
+        MyCloudAgent(bool movable = true, bool collision = true)
+            :MyAgent(movable, collision) {
+            orig_y = INT_MAX; up = true; collide_with = NULL;
+        }
+        virtual void update();
+        virtual void display();
+        virtual void handle_event(SDL_Event& e);
+    private:
+        int orig_y;
+        bool up;
+        MyAgent* collide_with;
+        int collision_free_timer = 10;
+    };
 
 	class MyChickenAgent : public MyAgent
 	{
