@@ -288,8 +288,14 @@ namespace GMUCS425
 
 		velocity = velocity.normalize();
 
-		x += velocity[0];
-		y += velocity[1];
+		if (collide_with) {
+			x -= velocity[0];
+			y -= velocity[1];
+		}
+		else {
+			x += velocity[0];
+			y += velocity[1];
+		}
 
 		// std::cout << m_enemies.size() << "\n";
 
