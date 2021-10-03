@@ -1,6 +1,8 @@
 #include "MyScene.h"
 #include "MyGame.h"
 #include <fstream>
+#include <stdlib.h>
+#include <ctime>
 
 namespace GMUCS425
 {
@@ -121,6 +123,7 @@ namespace GMUCS425
 
 		rent = objs["k"];
 		// Spawn in enemy at random positions.
+		srand((unsigned)time(0)); 
 		for (int i = 0; i < 100; i++)
 		{
 			MyChickenAgent *agent = new MyChickenAgent(16 * 4, 16 * 8, true);
