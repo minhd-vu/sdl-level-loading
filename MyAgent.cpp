@@ -258,15 +258,28 @@ namespace GMUCS425
 		// do something on the position of the player to the current chicken agent.
 
 		float distance = (position - Vector2d(player->getX(), player->getY())).normsqr();
-		if (distance < (6400))
+		
+		if (distance < (2000))
 		{
-			// std::cout << "enemy is close!" << distance << "\n";
+			if(this->visible == true) 
+			{
+				this->visible = false;
+			}
+			
+			
+
 		}
 
 		Vector2d velocity = Vector2d(0, 0);
 		// do something on the position of enemies
 		for (MyChickenAgent *enemy : enemies)
 		{
+			// if (distance < (2000))
+			// {
+			// 	std::cout << "enemy is close!" << distance << "\n";
+			// 	std::cout << "centerx!" << this->center_x << "\n";
+			// }
+
 			Vector2d diff = Vector2d(enemy->x, enemy->y) - position;
 			float distance_sqr = diff.normsqr();
 			if (distance_sqr < innerRadius * innerRadius)
