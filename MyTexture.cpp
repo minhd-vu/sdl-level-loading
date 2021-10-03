@@ -78,7 +78,7 @@ namespace GMUCS425
 	}
 
 	void MyTexture::render(int x, int y, SDL_Rect *clip, float scale, float angle,
-						   SDL_Point *center, SDL_RendererFlip flip)
+												 SDL_Point *center, SDL_RendererFlip flip)
 	{
 		//Set rendering space and render to screen
 		SDL_Rect renderQuad = {x, y, mWidth, mHeight};

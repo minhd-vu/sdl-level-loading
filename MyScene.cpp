@@ -65,7 +65,7 @@ namespace GMUCS425
 		}
 
 		// read in the objects
-		readEntity *rent = NULL;				  // hold info for one object
+		readEntity *rent = NULL;									// hold info for one object
 		unordered_map<string, readEntity *> objs; // hold all object and agent types;
 
 		// read through all objects until you find the Characters section
@@ -80,7 +80,7 @@ namespace GMUCS425
 				// read the rest of the line
 				inputfile >> rent->filename >> rent->orient >> rent->scale;
 				rent->agent = false; // these are objects
-				objs[buf] = rent;	 // store this object in the map
+				objs[buf] = rent;		 // store this object in the map
 				if (!texture_manager->create(rent->filename))
 				{
 					cerr << "ERROR: Failed to create " << buf << endl;
@@ -97,16 +97,16 @@ namespace GMUCS425
 
 		// Read in the characters (movable agents)
 		while (buf != "Characters")
-			inputfile >> buf;					   // get through any junk
+			inputfile >> buf;												 // get through any junk
 		while (!inputfile.eof() && buf != "World") // Read through until the world section
 		{
 			inputfile >> buf; // read in the char
 			if (buf != "World")
 			{
-				rent = new readEntity();					// create a new instance to store the next object
+				rent = new readEntity();										// create a new instance to store the next object
 				inputfile >> rent->filename >> rent->scale; // read the rest of the line
-				rent->agent = true;							// this is an agent
-				objs[buf] = rent;							// store the agent in the map
+				rent->agent = true;													// this is an agent
+				objs[buf] = rent;														// store the agent in the map
 				if (!texture_manager->create(rent->filename))
 				{
 					cerr << "ERROR: Failed to create " << buf << endl;
@@ -123,7 +123,7 @@ namespace GMUCS425
 
 		rent = objs["k"];
 		// Spawn in enemy at random positions.
-		srand((unsigned)time(0)); 
+		srand((unsigned)time(0));
 		for (int i = 0; i < 100; i++)
 		{
 			MyChickenAgent *agent = new MyChickenAgent(16 * 4, 16 * 8, true);
@@ -173,8 +173,8 @@ namespace GMUCS425
 		{
 			for (int j = 0; j < x; j++) // across (column)
 			{
-				inputfile >> c;	  // read one char at a time
-				buf = c + '\0';	  // convert char to string
+				inputfile >> c;		// read one char at a time
+				buf = c + '\0';		// convert char to string
 				rent = objs[buf]; // find cooresponding object or agent
 				if (rent != NULL) // it might not be an agent or object
 				{
@@ -210,10 +210,10 @@ namespace GMUCS425
 						cerr << "WARNING: Unknow tag: " << c << ". Ignore." << endl;
 				}
 			} //end for j (col)
-		}	  //end for i (row)
+		}		//end for i (row)
 
 		// delete all of the readEntities in the objs map
-		rent = objs["s"];	  // just so we can see what is going on in memory (delete this later)
+		rent = objs["s"];			// just so we can see what is going on in memory (delete this later)
 		for (auto obj : objs) // iterate through the objs
 		{
 			delete obj.second; // delete each readEntity
@@ -301,10 +301,10 @@ namespace GMUCS425
 	//create a texture from file
 	bool MySceneManager::create(std::string name, std::string scene_file)
 	{
-		std::ifstream inputfile;							// Holds a pointer into the file
-		std::string path = __FILE__;						//gets the current cpp file's path with the cpp file
+		std::ifstream inputfile;														// Holds a pointer into the file
+		std::string path = __FILE__;												//gets the current cpp file's path with the cpp file
 		path = path.substr(0, 1 + path.find_last_of('\\')); //removes filename to leave path
-		path += scene_file;									//if txt file is in the same directory as cpp file
+		path += scene_file;																	//if txt file is in the same directory as cpp file
 		inputfile.open(path);
 		//std::cout<<"path="<<path<<std::endl;
 

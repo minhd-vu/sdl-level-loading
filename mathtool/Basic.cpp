@@ -110,8 +110,8 @@ namespace mathtool
 #define MASK ((unsigned)(1 << (N - 1)) + (1 << (N - 1)) - 1)
 #define LOW(x) ((unsigned)(x)&MASK)
 #define HIGH(x) LOW((x) >> N)
-#define MUL(x, y, z)                    \
-	{                                   \
+#define MUL(x, y, z)                \
+	{                                 \
 		long l = (long)(x) * (long)(y); \
 		(z)[0] = LOW(l);                \
 		(z)[1] = HIGH(l);               \
@@ -128,26 +128,26 @@ namespace mathtool
 #define SET3(x, x0, x1, x2) ((x)[0] = (x0), (x)[1] = (x1), (x)[2] = (x2))
 #define SETLOW(x, y, n) SET3(x, LOW((y)[n]), LOW((y)[(n) + 1]), LOW((y)[(n) + 2]))
 #define SEED(x0, x1, x2) (SET3(x, x0, x1, x2), SET3(a, A0, A1, A2), c = C)
-#define REST(v)             \
+#define REST(v)           \
 	for (i = 0; i < 3; i++) \
 	{                       \
-		xsubi[i] = x[i];    \
-		x[i] = temp[i];     \
+		xsubi[i] = x[i];      \
+		x[i] = temp[i];       \
 	}                       \
 	return (v);
-#define NEST(TYPE, f, F)                   \
+#define NEST(TYPE, f, F)                 \
 	TYPE f(register unsigned short *xsubi) \
 	{                                      \
-		register int i;                    \
-		register TYPE v;                   \
-		unsigned temp[3];                  \
-		for (i = 0; i < 3; i++)            \
-		{                                  \
-			temp[i] = x[i];                \
-			x[i] = LOW(xsubi[i]);          \
-		}                                  \
-		v = F();                           \
-		REST(v);                           \
+		register int i;                      \
+		register TYPE v;                     \
+		unsigned temp[3];                    \
+		for (i = 0; i < 3; i++)              \
+		{                                    \
+			temp[i] = x[i];                    \
+			x[i] = LOW(xsubi[i]);              \
+		}                                    \
+		v = F();                             \
+		REST(v);                             \
 	}
 #define HI_BIT (1L << (2 * N - 1))
 
@@ -160,7 +160,7 @@ namespace mathtool
 		drand48()
 		{
 #if pdp11
-			static double two16m;	  /* old pdp11 cc can't compile an expression */
+			static double two16m;			/* old pdp11 cc can't compile an expression */
 			two16m = 1.0 / (1L << N); /* in "double" initializer! */
 #else
 			static double two16m = 1.0 / (1L << N);
@@ -239,7 +239,7 @@ namespace mathtool
 			ADDEQU(p[1], q[0], carry0);
 			MUL(a[1], x[0], r);
 			x[2] = LOW(carry0 + carry1 + CARRY(p[1], r[0]) + q[1] + r[1] +
-					   a[0] * x[2] + a[1] * x[1] + a[2] * x[0]);
+								 a[0] * x[2] + a[1] * x[1] + a[2] * x[0]);
 			x[1] = LOW(p[1] + r[0]);
 			x[0] = LOW(p[0]);
 		}
@@ -273,7 +273,7 @@ namespace mathtool
 			return ceil(x);
 		}
 
-	}  //End of extern "C"
+	}		 //End of extern "C"
 #endif //endif _WIn32
 
 } //end of nprmlib namespace

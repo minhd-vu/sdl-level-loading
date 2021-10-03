@@ -25,7 +25,7 @@ namespace GMUCS425
 		//displace this sprite at location (x,y) with orientation "angle"
 		//rotated around the point "center"
 		void display(int x, int y, float scale = 1, float angle = 0,
-					 SDL_Point *center = NULL, SDL_RendererFlip flip = SDL_FLIP_NONE);
+								 SDL_Point *center = NULL, SDL_RendererFlip flip = SDL_FLIP_NONE);
 
 		void increment_frame();
 
