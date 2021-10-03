@@ -25,7 +25,6 @@ This will generate `imgs/backdrop4.jpg`
 
 ## Contributors
 
-- put your name here <3
 - Tori Broadnax
 - Richard Roberts
 - Minh Vu
