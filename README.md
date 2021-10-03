@@ -10,6 +10,19 @@ mkdir build && cd build && cmake ..
 make -C build/ && ./build/PA01 ./levels/level004.txt
 ```
 
+## Background Generation
+
+### Dependencies
+```
+pip3 install numpy noise Pillow
+```
+
+### Running
+```
+python3 generate_background.py
+```
+This will generate `imgs/backdrop4.jpg`
+
 ## Contributors
 
 - put your name here <3
