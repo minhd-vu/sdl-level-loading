@@ -13,6 +13,6 @@ make -C build/ && ./build/PA01 ./levels/level004.txt
 ## Contributors
 
 - put your name here <3
-- put your name here <3
+- Tori Broadnax
 - Richard Roberts
 - Minh Vu
