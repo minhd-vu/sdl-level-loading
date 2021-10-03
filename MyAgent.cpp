@@ -403,13 +403,13 @@ namespace GMUCS425
 	void MyDragonAgent::draw_HUD()
 	{
 		std::stringstream ss;
-		ss << "x=" << x << " y=" << y << " health=" << health;
+		ss << "x=" << x << " y=" << y;
 		SDL_Renderer *renderer = getMyGame()->getRenderer();
 		static TTF_Font *font = NULL;
 
 		if (font == NULL)
 		{
-			font = TTF_OpenFont("fonts/Demo_ConeriaScript.ttf", 24); //this opens a font style and sets a size
+			font = TTF_OpenFont("fonts/Brightly_Crush_Shine.otf", 24); //this opens a font style and sets a size
 			if (font == NULL)
 			{
 				std::cerr << "Failed to load font! SDL_ttf Error: " << TTF_GetError() << std::endl;
@@ -423,8 +423,8 @@ namespace GMUCS425
 
 		SDL_Rect Message_rect; //create a rect
 		Message_rect.x = 10;	 //controls the rect's x coordinate
-		Message_rect.y = 50;	 // controls the rect's y coordinte
-		Message_rect.w = 150;	 // controls the width of the rect
+		Message_rect.y = 10;	 // controls the rect's y coordinte
+		Message_rect.w = 100;	 // controls the width of the rect
 		Message_rect.h = 30;	 // controls the height of the rect
 
 		//Mind you that (0,0) is on the top left of the window/screen, think a rect as the text's box, that way it would be very simple to understance
