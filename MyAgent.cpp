@@ -284,7 +284,7 @@ namespace GMUCS425
 
 		if (collide_with)
 		{
-			std::cout << "COLLISION\n";
+			velocity = velocity - acceleration;
 			position = position - velocity;
 		}
 		else
