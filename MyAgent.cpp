@@ -272,20 +272,12 @@ namespace GMUCS425
 			{
 				this->visible = false;
 			}
-			
-			
-
 		}
 
 		Vector2d velocity = Vector2d(0, 0);
 		// do something on the position of enemies
 		for (MyChickenAgent *enemy : enemies)
 		{
-			// if (distance < (2000))
-			// {
-			// 	std::cout << "enemy is close!" << distance << "\n";
-			// 	std::cout << "centerx!" << this->center_x << "\n";
-			// }
 
 			Vector2d diff = Vector2d(enemy->x, enemy->y) - position;
 			float distance_sqr = diff.normsqr();
