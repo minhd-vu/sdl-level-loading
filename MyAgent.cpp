@@ -139,6 +139,64 @@ namespace GMUCS425
 			}
 		}
 	}
+	
+	// CUSTOM CLOUD AGENT
+  void MyCloudAgent::display()
+  {
+      if (!this->visible) return; //not visible...
+      //setup positions and ask sprite to draw something
+      this->sprite->display(x, y, scale, degree, NULL, this->up ? SDL_FLIP_NONE : SDL_FLIP_HORIZONTAL);
+      draw_bounding_box();
+  }
+
+  void MyCloudAgent::update()
+  {
+      if (!this->collision)
+      {
+          if (collision_free_timer >= 0) this->collision_free_timer--;
+          else collide_with = NULL; //no collision
+      }
+
+      this->collision = false;
+
+      if (orig_y == INT_MAX)
+          orig_y = y;
+      if (up) y -= 2;
+      else y += 2;
+      if (y < orig_y - 100) up = false;
+      if (y > orig_y + 100) up = true;
+  }
+
+  void MyCloudAgent::handle_event(SDL_Event& e)
+  {
+      //return;
+      if (this->collision && collide_with != NULL)
+      {
+          //std::cout<<"already in collision with "<<collide_with<<std::endl;
+
+          return;
+      }
+
+      if (e.type == SDL_USEREVENT)
+      {
+          if (e.user.code == 1)
+          {
+              if (e.user.data1 == this || e.user.data2 == this)
+              {
+                  MyAgent* other = (MyAgent*)((e.user.data1 != this) ? e.user.data1 : e.user.data2);
+
+                  if (other != collide_with)
+                  {
+                      collide_with = other;
+                      up = !up;
+                  }
+                  this->collision_free_timer = 10;
+                  this->collision = true;
+              }
+              //else collide_with=NULL; //no collision
+          }
+      }
+  }
 
 	void MyChickenAgent::display()
 	{
