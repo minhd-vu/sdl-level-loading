@@ -136,7 +136,6 @@ namespace GMUCS425
 			agent->tranlateTo(rand() % x * cell_w, rand() % y * cell_h);
 			agent->scaleTo(rent->scale);
 			this->m_agents.push_front(agent);
-			this->m_enemies.push_front(agent);
 		}
 
 		// spawn in player at center.
@@ -242,10 +241,12 @@ namespace GMUCS425
 			if (IsType<MyChickenAgent>(agent))
 			{
 				MyChickenAgent *chicken = (MyChickenAgent *)agent;
-				chicken->update(m_player, m_enemies);
+				chicken->update(m_player, m_agents);
 			}
 			else
+			{
 				agent->update();
+			}
 		}
 	}
 
