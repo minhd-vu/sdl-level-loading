@@ -10,9 +10,22 @@ mkdir build && cd build && cmake ..
 make -C build/ && ./build/PA01 ./levels/level004.txt
 ```
 
+## Background Generation
+
+### Dependencies
+```
+pip3 install numpy noise Pillow
+```
+
+### Running
+```
+python3 generate_background.py
+```
+This will generate `imgs/backdrop4.jpg` using Perlin noise.
+
 ## Contributors
 
-- put your name here <3
-- put your name here <3
-- put your name here <3
+- Tori Broadnax
+- Richard Roberts
 - Minh Vu
+- Jeffrey Do

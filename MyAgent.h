@@ -84,15 +84,15 @@ namespace GMUCS425
 		bool collision;
 
 		MySprite *sprite; //current sprite
-						  //it is possible that you can have more than one sprites
-						  //vector<MySprite *> sprites; //the sprites
+											//it is possible that you can have more than one sprites
+											//vector<MySprite *> sprites; //the sprites
 	};
 
 	class MyZombieAgent : public MyAgent
 	{
 	public:
 		MyZombieAgent(bool movable = true, bool collision = true)
-			: MyAgent(movable, collision)
+				: MyAgent(movable, collision)
 		{
 			orig_x = INT_MAX;
 			left = true;
@@ -108,23 +108,27 @@ namespace GMUCS425
 		MyAgent *collide_with;
 		int collision_free_timer = 10;
 	};
-	
+
 	class MyCloudAgent : public MyAgent
-    {
-    public:
-        MyCloudAgent(bool movable = true, bool collision = true)
-            :MyAgent(movable, collision) {
-            orig_y = INT_MAX; up = true; collide_with = NULL;
-        }
-        virtual void update();
-        virtual void display();
-        virtual void handle_event(SDL_Event& e);
-    private:
-        int orig_y;
-        bool up;
-        MyAgent* collide_with;
-        int collision_free_timer = 10;
-    };
+	{
+	public:
+		MyCloudAgent(bool movable = true, bool collision = true)
+				: MyAgent(movable, collision)
+		{
+			orig_y = INT_MAX;
+			up = true;
+			collide_with = NULL;
+		}
+		virtual void update();
+		virtual void display();
+		virtual void handle_event(SDL_Event &e);
+
+	private:
+		int orig_y;
+		bool up;
+		MyAgent *collide_with;
+		int collision_free_timer = 10;
+	};
 
 	class MyChickenAgent : public MyAgent
 	{

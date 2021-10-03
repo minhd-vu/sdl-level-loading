@@ -51,8 +51,8 @@ namespace mathtool
 		Quaternion(const Matrix4x4 &m4)
 		{
 			Matrix3x3 m3(m4[0][0], m4[0][1], m4[0][2],
-						 m4[1][0], m4[1][1], m4[1][2],
-						 m4[2][0], m4[2][1], m4[2][2]);
+									 m4[1][0], m4[1][1], m4[1][2],
+									 m4[2][0], m4[2][1], m4[2][2]);
 			set(m3);
 		}
 
@@ -123,8 +123,8 @@ namespace mathtool
 			double sy = 2 * m_s * m_v[1];
 			double sz = 2 * m_s * m_v[2];
 			return Matrix3x3(1 - y_2 - z_2, xy - sz, zx + sy,
-							 xy + sz, 1 - x_2 - z_2, yz - sx,
-							 zx - sy, yz + sx, 1 - x_2 - y_2);
+											 xy + sz, 1 - x_2 - z_2, yz - sx,
+											 zx - sy, yz + sx, 1 - x_2 - y_2);
 		}
 
 		void set(double s, const Vector3d &v)

@@ -25,7 +25,7 @@ namespace GMUCS425
 		}
 
 		virtual bool init() { return true; } //does nothing by default
-		virtual void kill() {}				 //does nothing by default
+		virtual void kill() {}							 //does nothing by default
 
 		virtual void add(std::string name, T *obj)
 		{

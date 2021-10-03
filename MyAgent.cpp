@@ -60,8 +60,8 @@ namespace GMUCS425
 		float my_H = this->sprite->getHeight(scale);
 
 		SDL_Rect box; //create a rect
-		box.x = x;	  //controls the rect's x coordinate
-		box.y = y;	  // controls the rect's y coordinte
+		box.x = x;		//controls the rect's x coordinate
+		box.y = y;		// controls the rect's y coordinte
 		box.w = my_W; // controls the width of the rect
 		box.h = my_H; // controls the height of the rect
 
@@ -139,64 +139,71 @@ namespace GMUCS425
 			}
 		}
 	}
-	
+
 	// CUSTOM CLOUD AGENT
-  void MyCloudAgent::display()
-  {
-      if (!this->visible) return; //not visible...
-      //setup positions and ask sprite to draw something
-      this->sprite->display(x, y, scale, degree, NULL, this->up ? SDL_FLIP_NONE : SDL_FLIP_HORIZONTAL);
-      draw_bounding_box();
-  }
+	void MyCloudAgent::display()
+	{
+		if (!this->visible)
+			return; //not visible...
+		//setup positions and ask sprite to draw something
+		this->sprite->display(x, y, scale, degree, NULL, this->up ? SDL_FLIP_NONE : SDL_FLIP_HORIZONTAL);
+		draw_bounding_box();
+	}
 
-  void MyCloudAgent::update()
-  {
-      if (!this->collision)
-      {
-          if (collision_free_timer >= 0) this->collision_free_timer--;
-          else collide_with = NULL; //no collision
-      }
+	void MyCloudAgent::update()
+	{
+		if (!this->collision)
+		{
+			if (collision_free_timer >= 0)
+				this->collision_free_timer--;
+			else
+				collide_with = NULL; //no collision
+		}
 
-      this->collision = false;
+		this->collision = false;
 
-      if (orig_y == INT_MAX)
-          orig_y = y;
-      if (up) y -= 2;
-      else y += 2;
-      if (y < orig_y - 100) up = false;
-      if (y > orig_y + 100) up = true;
-  }
+		if (orig_y == INT_MAX)
+			orig_y = y;
+		if (up)
+			y -= 2;
+		else
+			y += 2;
+		if (y < orig_y - 100)
+			up = false;
+		if (y > orig_y + 100)
+			up = true;
+	}
 
-  void MyCloudAgent::handle_event(SDL_Event& e)
-  {
-      //return;
-      if (this->collision && collide_with != NULL)
-      {
-          //std::cout<<"already in collision with "<<collide_with<<std::endl;
+	void MyCloudAgent::handle_event(SDL_Event &e)
+	{
+		//return;
+		if (this->collision && collide_with != NULL)
+		{
+			//std::cout<<"already in collision with "<<collide_with<<std::endl;
 
-          return;
-      }
+			return;
+		}
 
-      if (e.type == SDL_USEREVENT)
-      {
-          if (e.user.code == 1)
-          {
-              if (e.user.data1 == this || e.user.data2 == this)
-              {
-                  MyAgent* other = (MyAgent*)((e.user.data1 != this) ? e.user.data1 : e.user.data2);
+		if (e.type == SDL_USEREVENT)
+		{
+			if (e.user.code == 1)
+			{
+				if (e.user.data1 == this || e.user.data2 == this)
+				{
+					MyAgent *other = (MyAgent *)((e.user.data1 != this) ? e.user.data1 : e.user.data2);
 
-                  if (other != collide_with)
-                  {
-                      collide_with = other;
-                      up = !up;
-                  }
-                  this->collision_free_timer = 10;
-                  this->collision = true;
-              }
-              //else collide_with=NULL; //no collision
-          }
-      }
-  }
+					if (other != collide_with)
+					{
+						collide_with = other;
+						up = !up;
+					}
+					this->collision_free_timer = 10;
+					this->collision = true;
+				}
+				//else collide_with=NULL; //no collision
+			}
+		}
+	}
 
 	void MyChickenAgent::display()
 	{
@@ -236,8 +243,8 @@ namespace GMUCS425
 					this->collision_free_timer = 10;
 					this->collision = true;
 				} //end if
-			}	  //end if
-		}		  //end if
+			}		//end if
+		}			//end if
 	}
 
 	void MyChickenAgent::update(MyAgent *player, std::list<MyChickenAgent *> enemies)
@@ -294,8 +301,14 @@ namespace GMUCS425
 
 		velocity = velocity.normalize();
 
-		x += velocity[0];
-		y += velocity[1];
+		if (collide_with) {
+			x -= velocity[0];
+			y -= velocity[1];
+		}
+		else {
+			x += velocity[0];
+			y += velocity[1];
+		}
 
 		// std::cout << m_enemies.size() << "\n";
 
@@ -409,13 +422,13 @@ namespace GMUCS425
 	void MyDragonAgent::draw_HUD()
 	{
 		std::stringstream ss;
-		ss << "x=" << x << " y=" << y << " health=" << health;
+		ss << "x=" << x << " y=" << y;
 		SDL_Renderer *renderer = getMyGame()->getRenderer();
 		static TTF_Font *font = NULL;
 
 		if (font == NULL)
 		{
-			font = TTF_OpenFont("fonts/Demo_ConeriaScript.ttf", 24); //this opens a font style and sets a size
+			font = TTF_OpenFont("fonts/Brightly_Crush_Shine.otf", 24); //this opens a font style and sets a size
 			if (font == NULL)
 			{
 				std::cerr << "Failed to load font! SDL_ttf Error: " << TTF_GetError() << std::endl;
@@ -423,15 +436,15 @@ namespace GMUCS425
 			}
 		}
 
-		SDL_Color color = {200, 100, 0};												   // this is the color in rgb format, maxing out all would give you the color white, and it will be your text's color
+		SDL_Color color = {200, 100, 0};																									 // this is the color in rgb format, maxing out all would give you the color white, and it will be your text's color
 		SDL_Surface *surfaceMessage = TTF_RenderText_Solid(font, ss.str().c_str(), color); // as TTF_RenderText_Solid could only be used on SDL_Surface then you have to create the surface first
-		SDL_Texture *Message = SDL_CreateTextureFromSurface(renderer, surfaceMessage);	   //now you can convert it into a texture
+		SDL_Texture *Message = SDL_CreateTextureFromSurface(renderer, surfaceMessage);		 //now you can convert it into a texture
 
 		SDL_Rect Message_rect; //create a rect
-		Message_rect.x = 10;   //controls the rect's x coordinate
-		Message_rect.y = 50;   // controls the rect's y coordinte
-		Message_rect.w = 150;  // controls the width of the rect
-		Message_rect.h = 30;   // controls the height of the rect
+		Message_rect.x = 10;	 //controls the rect's x coordinate
+		Message_rect.y = 10;	 // controls the rect's y coordinte
+		Message_rect.w = 100;	 // controls the width of the rect
+		Message_rect.h = 30;	 // controls the height of the rect
 
 		//Mind you that (0,0) is on the top left of the window/screen, think a rect as the text's box, that way it would be very simple to understance
 

@@ -1,15 +1,15 @@
 50 50
-imgs/backdrop2.jpg
+imgs/backdrop4.jpg
 
 Objects
 b imgs/cannonball.png 0.0 0.15
 t imgs/tower.png 0.0 0.3
-w imgs/brick.png 0.0 0.47
+w imgs/cloud.png 0.1 0.1
 
 Characters
 z imgs/zombie.png 0.1
-k imgs/chicken.png  0.15
-d imgs/dragon.png 0.075
+k imgs/bubbles.png  0.15
+d imgs/birb.png 0.075
 f imgs/foo.png 0.080
 
 
