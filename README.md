@@ -21,7 +21,7 @@ pip3 install numpy noise Pillow
 ```
 python3 generate_background.py
 ```
-This will generate `imgs/backdrop4.jpg`
+This will generate `imgs/backdrop4.jpg` using Perlin noise.
 
 ## Contributors
 
