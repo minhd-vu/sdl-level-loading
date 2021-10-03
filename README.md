@@ -29,3 +29,4 @@ This will generate `imgs/backdrop4.jpg`
 - Tori Broadnax
 - Richard Roberts
 - Minh Vu
+- Jeffrey Do
