@@ -267,11 +267,12 @@ namespace GMUCS425
 		float distance = (position - Vector2d(player->getX(), player->getY())).normsqr();
 		
 		if (distance < (2000))
+		{			
+			this->scaleTo(0.3);
+		}
+		else 
 		{
-			if(this->visible == true) 
-			{
-				this->visible = false;
-			}
+			this->scaleTo(0.15);
 		}
 
 		Vector2d velocity = Vector2d(0, 0);
