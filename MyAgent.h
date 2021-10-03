@@ -143,7 +143,7 @@ namespace GMUCS425
 			center_x = center_y = INT_MAX;
 			ccw = false;
 			collide_with = NULL;
-			velocity = mathtool::Vector2d(0, 0);
+			velocity = mathtool::Vector2d(rand() % 2 - 1, rand() % 2 - 1);
 			collision_free_timer = collision_free_time;
 		}
 		virtual void update(MyAgent *player, std::list<MyAgent *> agents);
