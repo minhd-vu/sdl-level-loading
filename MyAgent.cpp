@@ -257,15 +257,14 @@ namespace GMUCS425
 
 		float distance = (position - Vector2d(player->getX(), player->getY())).normsqr();
 
-		
 		if (distance < (2000))
-		{			
+		{
 			this->scaleTo(0.3);
 		}
-		else 
+		else
 		{
 			this->scaleTo(0.15);
-    }
+		}
 
 		// do something on the position of enemies
 		for (MyAgent *agent : agents)
