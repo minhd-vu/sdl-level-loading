@@ -256,10 +256,16 @@ namespace GMUCS425
 		// do something on the position of the player to the current chicken agent.
 
 		float distance = (position - Vector2d(player->getX(), player->getY())).normsqr();
-		if (distance < 6400)
-		{
-			// agents.remove(this);
+
+		
+		if (distance < (2000))
+		{			
+			this->scaleTo(0.3);
 		}
+		else 
+		{
+			this->scaleTo(0.15);
+    }
 
 		// do something on the position of enemies
 		for (MyAgent *agent : agents)
