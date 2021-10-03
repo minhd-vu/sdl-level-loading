@@ -7,7 +7,7 @@ mkdir build && cd build && cmake ..
 
 ## Running
 ```
-make -C build/ && /build/PA01 ./levels/level004.txt
+make -C build/ && ./build/PA01 ./levels/level004.txt
 ```
 
 ## Contributors
