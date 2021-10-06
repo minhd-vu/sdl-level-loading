@@ -1,6 +1,10 @@
 # Assignment 3
 
-## About
+## Generating Procedural Dungeon
+```
+# python3 procedural_dungeon.py <template> <output>
+python3 procedural_dungeon.py levels/level004.txt levels/level005.txt
+```
 
 ## Building
 ```
