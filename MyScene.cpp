@@ -124,7 +124,7 @@ namespace GMUCS425
 		rent = objs["k"];
 		// Spawn in enemy at random positions.
 		srand((unsigned)time(0));
-		for (int i = 0; i < 100; i++)
+		for (int i = 0; i < 0; i++)
 		{
 			MyChickenAgent *agent = new MyChickenAgent(16 * 4, 16 * 8, true);
 			assert(agent);
@@ -153,7 +153,7 @@ namespace GMUCS425
 
 		rent = objs["w"];
 		// Spawn in enemy at random obstacles.
-		for (int i = 0; i < 20; i++)
+		for (int i = 0; i < 0; i++)
 		{
 			MyAgent *agent = new MyAgent(rent->agent);
 			assert(agent);
